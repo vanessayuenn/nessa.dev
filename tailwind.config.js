@@ -1,14 +1,23 @@
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
+    fontFamily: {
+      display: ['Major Mono Display', 'monospace'],
+      body: ['Playfair Display', 'serif'],
+    },
+    colors: {
+      red: '#A63E26',
+      dark: '#314041',
+      light: '#F4F0ED'
+    },
     extend: {
-      colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-      },
+      // colors: {
+      //   'accent-1': '#FAFAFA',
+      //   'accent-2': '#EAEAEA',
+      //   'accent-7': '#333',
+      //   success: '#0070f3',
+      //   cyan: '#79FFE1',
+      // },
       spacing: {
         28: '7rem',
       },

@@ -17,7 +17,7 @@ export default function Post({ post, morePosts, preview }) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} titlePrefix={post.title}>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -25,12 +25,6 @@ export default function Post({ post, morePosts, preview }) {
         ) : (
           <>
             <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
