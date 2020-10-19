@@ -47,11 +47,11 @@ export default function Work() {
             </div>
         </div>
 
-        <table className="table-auto container mt-6 md:mt-12">
+        <table className="table-fixed container mt-6 md:mt-12">
           <thead className="border-b-2 border-t-2 bg-red bg-opacity-25 text-red lowercase font-display text-sm md:text-base">
             <tr>
-              <th className="px-2 md:px-4 py-2 text-left">When</th>
-              <th className="px-2 md:px-4 py-2 text-left">What</th>
+              <th className="px-2 md:px-4 py-2 text-left w-1/4 md:w-32">When</th>
+              <th className="px-2 md:px-4 py-2 text-left w-1/2 md:w-8/12">What</th>
               <th className="px-2 md:px-4 py-2 text-left">How</th>
             </tr>
           </thead>
