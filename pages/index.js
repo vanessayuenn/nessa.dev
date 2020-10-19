@@ -1,4 +1,3 @@
-import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
@@ -11,7 +10,7 @@ export default function Index() {
   return (
     <>
       <Layout>
-        <div className="md:px-20 mt-10 md:mt-20">
+        <div className="mt-10 md:mt-20">
           <h1 className="text-3xl md:text-6xl font-display text-red tracking-tight my-6">Dear Internet,</h1>
           <p className="text-xl md:text-2xl md:px-10 pb-8 md:pt-8">
             Hello, my names is Vanessa Yuen, or in Chinese: 袁逸希. I am a Barcelona based Senior Product Engineer, currenly crafting code at <a href="https://www.github.com" className="font-display text-red hover:underline">GitHub</a>. Outside of photosynthesis hours, I work on connecting plant lovers at <a href="https://planteka.co" className="font-display text-red hover:underline">Planteka</a>. I care deeply about humane designs, user experience, and community building.

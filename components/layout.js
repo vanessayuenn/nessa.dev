@@ -11,14 +11,14 @@ export default function Layout({ preview, titlePrefix, ogImage, children }) {
       <Head>
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Lora&family=Major+Mono+Display&family=Playfair+Display&display=swap');
-          </style>
+        </style>
         <title>{ titlePrefix ? `${titlePrefix} | ` : '' }Vanessa Yuen</title>
       </Head>
       <Meta ogImage={ogImage} />
       <div className="min-h-screen">
         <Container>
           <Header />
-          <main>{children}</main>
+          <main className="md:px-20">{children}</main>
           <Footer />
         </Container>
       </div>
