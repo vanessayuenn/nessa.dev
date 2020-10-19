@@ -9,17 +9,19 @@ const allRoles = uniq(PROJECTS.reduce((arr, {role}) => [...arr, ...role], []))
 
 export default function Work() {
   const [projects, setProjects] = useState(projectsByYear);
-  const [filters, setFilters] = useState(allRoles)
-  // const [filters, setFilters] = useState(['code', 'public speaking'])
-
-  const toggleFilter = (role) => {
-    console.log(role)
-  }
+  const [filters, setFilters] = useState(
+    // convert array to key/value pair: {filter1: true, ...}
+    allRoles.reduce((acc, key) => (acc[key] = true, acc), {})
+  )
 
   useEffect(() => {
-    const filtered = projects.filter(proj => proj.role.some(role => filters.includes(role)))
+    const filtered = projectsByYear.filter(proj => proj.role.some(role => filters[role]))
     setProjects(filtered)
   }, [filters])
+
+    const toggleFilter = (role) => {
+      setFilters({...filters, [role]: !filters[role]})
+    }
 
   return (
     <>
@@ -29,12 +31,12 @@ export default function Work() {
           <h1 className="my-4 text-lg">I like wearing many hats.</h1>
           <div className="my-8">
             {allRoles.map((role, id) => {
-              const active = filters.includes(role)
+              const active = filters[role]
               return (
                 <span
                   key={`filter-${id}`}
                   className={classnames(
-                    'inline-block font-display cursor-pointer text-lg md:text-xl px-3 mx-2 my-1 py-2 border-red border-2 text-red bg-red hover:bg-opacity-50',
+                    'inline-block font-display cursor-pointer text-base md:text-xl px-3 mx-1 my-1 py-2 border-red border-2 text-red bg-red hover:bg-opacity-50',
                     { 'bg-red text-light hover:text-red': active },
                     { 'bg-light text-red hover:bg-red': !active }
                   )}
@@ -45,7 +47,7 @@ export default function Work() {
             </div>
         </div>
 
-        <table className="table-auto container mt-12">
+        <table className="table-auto container mt-6 md:mt-12">
           <thead className="border-b-2 border-t-2 bg-red bg-opacity-25 text-red lowercase font-display text-sm md:text-base">
             <tr>
               <th className="px-2 md:px-4 py-2 text-left">When</th>
