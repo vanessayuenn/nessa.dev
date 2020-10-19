@@ -25,7 +25,7 @@ export default function Header() {
         <a><Logo /></a>
       </Link>
       <div className="font-display flex flex-grow items-end justify-end">
-        <NavLink href="/work" displayName="Work" />
+        <NavLink href="/projects" displayName="Projects" />
         <NavLink href="/posts" displayName="Fragments" />
       </div>
     </div>
