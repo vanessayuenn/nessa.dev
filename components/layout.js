@@ -18,8 +18,8 @@ export default function Layout ({ preview, titlePrefix, ogImage, children }) {
         <Container>
           <Header />
           <main className='md:px-20'>{children}</main>
-          <Footer />
         </Container>
+        <Footer />
       </div>
     </>
   )
