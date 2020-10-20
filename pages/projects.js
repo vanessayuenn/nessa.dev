@@ -1,11 +1,9 @@
 import Layout from '../components/layout'
 import { PROJECTS } from '../lib/constants'
 import { useState, useEffect } from 'react'
-import uniq from 'lodash.uniq'
 import classnames from 'classnames'
 
 export default function Work () {
-
   const projectsByYear = PROJECTS.sort((a, b) => {
     if (a.pinned) return -1
     if (b.pinned) return 1
@@ -17,7 +15,7 @@ export default function Work () {
     code: true,
     product: true,
     speaker: true,
-    organizer: false,
+    organizer: false
   })
 
   const allRoles = Object.keys(filters)
@@ -57,7 +55,7 @@ export default function Work () {
           </div>
         </div>
 
-        <table className='table-fixed container mt-6'>
+        <table className='table-fixed w-full mt-6'>
           <thead className='border-b-2 border-t-2 bg-red bg-opacity-25 text-red lowercase font-display text-sm md:text-base'>
             <tr>
               <th className='px-2 md:px-4 py-2 text-left w-1/4 md:w-32'>When</th>
