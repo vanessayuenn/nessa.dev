@@ -5,12 +5,12 @@ import Intro from '../../components/intro'
 import Layout from '../../components/layout'
 import { getAllPosts } from '../../lib/api'
 
-export default function Index({ allPosts }) {
+export default function Index ({ allPosts }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <>
-      <Layout preview={true} titlePrefix={'Fragments'}>
+      <Layout preview titlePrefix='Fragments'>
         <Container>
           <Intro />
           {heroPost && (
@@ -30,17 +30,17 @@ export default function Index({ allPosts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const allPosts = getAllPosts([
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
-    'excerpt',
+    'excerpt'
   ])
 
   return {
-    props: { allPosts },
+    props: { allPosts }
   }
 }

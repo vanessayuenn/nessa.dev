@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "standard --fix"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -15,7 +16,8 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "remark": "11.0.2",
-    "remark-html": "10.0.0"
+    "remark-html": "10.0.0",
+    "standard": "^14.3.4"
   },
   "devDependencies": {
     "postcss-preset-env": "^6.7.0",
