@@ -6,25 +6,12 @@ import Layout from '../../components/layout'
 import { getAllPosts } from '../../lib/api'
 
 export default function Index ({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  // const heroPost = allPosts[0]
+  // const morePosts = allPosts.slice(1)
   return (
     <>
-      <Layout preview titlePrefix='Fragments'>
-        <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+      <Layout prefix='Musings'>
+        <h1 className='text-4xl font-display mt-10 md:mt-20'>coming 🔜</h1>
       </Layout>
     </>
   )

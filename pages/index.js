@@ -14,7 +14,7 @@ export default function Index () {
           <p className='text-xl md:text-2xl md:px-10 pb-4'>
             A reluctant nomad and permanent immigrant, I grew up in Hong Kong, matured in Toronto, flirted with Berlin, before settling in sunny Barcelona. At the moment, I share my life with my partner, a <a href='https://twitter.com/vanessayuenn/status/1309115590628474882' className='text-red hover:underline'>cat</a> that wears a toupée, and a growing collection of <a href='https://airtable.com/tbljCzdtP428DRX3S/viwUMqbZGJV5zVdWO?blocks=hide' className='text-red hover:underline'>houseplants</a>.
           </p>
-          <p className='text-2xl md:text-4xl font-display text-red tracking-tight mt-6 md:mt-12'>Love,<br />Vanessa</p>
+          <p className='text-2xl md:text-4xl font-display text-red tracking-tight mt-6 md:mt-12 mb-24 md:mb-40'>Love,<br />Vanessa</p>
         </div>
       </Layout>
     </>

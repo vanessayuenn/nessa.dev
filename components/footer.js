@@ -2,7 +2,7 @@ import { EXAMPLE_PATH } from '../lib/constants'
 
 export default function Footer () {
   return (
-    <footer className='mt-24 py-12 text-center border-t-2 border-red text-sm font-body'>
+    <footer className='mt-24 py-12 md:py-24 text-center bg-red bg-opacity-25 text-sm font-body text-dark'>
       <p>I can be found in other corners of the Internet:</p>
       <p className='my-2'>
         <a className='text-red hover:underline' href="https://twitter.com/vanessayuenn">Twitter</a>,&nbsp;
