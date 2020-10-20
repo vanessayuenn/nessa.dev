@@ -29,12 +29,16 @@ export default function Work () {
     setFilters({ ...filters, [role]: !filters[role] })
   }
 
+  const joinByBr = (arr) => arr.reduce(
+    (acc, x) => acc === null ? x : <>{acc} <br /> {x}</>
+  , null)
+
   return (
     <>
       <Layout titlePrefix='Selected Work'>
         <div className='text-center mt-10 md:mt-20'>
           <h1 className='my-4 md:my-8 text-xl md:text-2xl font-display'>Jack of all trades, Master of some.</h1>
-          <h1 className='my-6'>I like wearing many different hats:</h1>
+          <h1 className='my-6'>I enjoy wearing many different hats:</h1>
           <div>
             {allRoles.map((role, id) => {
               const active = filters[role]
@@ -66,13 +70,13 @@ export default function Work () {
           <tbody>
             {projects.map((proj, id) => (
               <tr className='align-top' key={`proj-${id}`}>
-                <td className='border-b-2 border-red px-2 md:px-4 py-2 text-sm md:text-base'>{proj.when.join(', ')}</td>
+                <td className='border-b-2 border-red px-2 md:px-4 py-2 text-sm md:text-base'>{joinByBr(proj.when)}</td>
                 <td className='border-b-2 border-red px-2 md:px-4 py-2'>
                   <div className='text-lg'>
                     <a href={proj.link} className='hover:text-red hover:underline'>{proj.title}</a>
                   </div>
                   <div className='font-display lowercase text-xs'>
-                    {proj.where.reduce((acc, x) => acc === null ? x : <>{acc} <br /> {x}</>, null)}
+                    {joinByBr(proj.where)}
                   </div>
                 </td>
                 <td className='border-b-2 border-red px-2 md:px-4 py-2 text-sm md:text-base'>{proj.role.join(', ')}</td>
