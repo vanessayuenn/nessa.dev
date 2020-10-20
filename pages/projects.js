@@ -31,7 +31,7 @@ export default function Work () {
 
   const joinByBr = (arr) => arr.reduce(
     (acc, x) => acc === null ? x : <>{acc} <br /> {x}</>
-  , null)
+    , null)
 
   return (
     <>
