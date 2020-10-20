@@ -4,18 +4,23 @@ import { useState, useEffect } from 'react'
 import uniq from 'lodash.uniq'
 import classnames from 'classnames'
 
-const projectsByYear = PROJECTS.sort((a, b) => a.when[0] < b.when[0])
-const allRoles = uniq(PROJECTS.reduce((arr, { role }) => [...arr, ...role], []))
-
 export default function Work () {
+
+  const projectsByYear = PROJECTS.sort((a, b) => {
+    if (a.pinned) return -1
+    if (b.pinned) return 1
+    return b.when[0] - a.when[0]
+  })
+
   const [projects, setProjects] = useState(projectsByYear)
-  const [filters, setFilters] = useState(
-    // convert array to key/value pair: {filter1: true, ...}
-    allRoles.reduce((acc, key) => {
-      acc[key] = true
-      return acc
-    }, {})
-  )
+  const [filters, setFilters] = useState({
+    code: true,
+    product: true,
+    speaker: true,
+    organizer: false,
+  })
+
+  const allRoles = Object.keys(filters)
 
   useEffect(() => {
     const filtered = projectsByYear.filter(proj => proj.role.some(role => filters[role]))
@@ -29,29 +34,30 @@ export default function Work () {
   return (
     <>
       <Layout titlePrefix='Selected Work'>
-
-        <div className='text-center'>
-          <h1 className='my-4 text-lg'>I like wearing many hats.</h1>
-          <div className='my-8'>
+        <div className='text-center mt-10 md:mt-20'>
+          <h1 className='my-4 md:my-8 text-xl md:text-2xl font-display'>Jack of all trades, Master of some.</h1>
+          <h1 className='my-6'>I like wearing many different hats:</h1>
+          <div>
             {allRoles.map((role, id) => {
               const active = filters[role]
               return (
-                <span
+                <div
                   key={`filter-${id}`}
+                  role='button'
                   className={classnames(
-                    'inline-block font-display cursor-pointer text-base md:text-xl px-3 mx-1 my-1 py-2 border-red border-2 text-red bg-red hover:bg-opacity-50',
+                    'inline-block font-display cursor-pointer text-sm md:text-lg px-3 mx-1 my-1 py-2 border-red border-2 text-red bg-red hover:bg-opacity-50',
                     { 'bg-red text-light hover:text-red': active },
                     { 'bg-light text-red hover:bg-red': !active }
                   )}
                   onClick={() => toggleFilter(role, active)}
                 >{role} 🎩
-                </span>
+                </div>
               )
             })}
           </div>
         </div>
 
-        <table className='table-fixed container mt-6 md:mt-12'>
+        <table className='table-fixed container mt-6'>
           <thead className='border-b-2 border-t-2 bg-red bg-opacity-25 text-red lowercase font-display text-sm md:text-base'>
             <tr>
               <th className='px-2 md:px-4 py-2 text-left w-1/4 md:w-32'>When</th>

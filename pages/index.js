@@ -8,7 +8,7 @@ export default function Index () {
         <div className='mt-10 md:mt-20'>
           <h1 className='text-3xl md:text-6xl font-display text-red tracking-tight my-6'>Dear Internet,</h1>
           <p className='text-xl md:text-2xl md:px-10 pb-8 md:pt-8'>
-            Hello, my names is Vanessa Yuen, or in Chinese: 袁逸希. I am a Barcelona based Senior Product Engineer, currenly crafting code at <a href='https://www.github.com' className='font-display text-red hover:underline'>GitHub</a>. Outside of photosynthesis hours, I work on connecting plant lovers at <a href='https://planteka.co' className='font-display text-red hover:underline'>Planteka</a>. I care deeply about humane designs, user experience, and community building.
+            Hello, my name is Vanessa Yuen, or in Chinese: 袁逸希. I am a Barcelona based Senior Product Engineer, currenly crafting code at <a href='https://www.github.com' className='font-display text-red hover:underline'>GitHub</a>. <span className='hidden'>Outside of photosynthesis hours, I work on connecting plant lovers at <a href='https://planteka.co' className='font-display text-red hover:underline'>Planteka</a>.</span> I care deeply about humane designs, user experience, and community building.
           </p>
           <p className='text-xl md:text-2xl md:px-10 pb-2'>🇭🇰🇨🇦🇩🇪🇪🇸</p>
           <p className='text-xl md:text-2xl md:px-10 pb-4'>
