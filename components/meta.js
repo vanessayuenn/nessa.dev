@@ -8,7 +8,7 @@ export default function Meta ({ ogImage }) {
         name='description'
         content='Vanessa Yuen | Senior Product Engineer'
       />
-      {/* <meta property="og:image" content={ogImage || HOME_OG_IMAGE_URL} /> */}
+      <meta property="og:image" content='./assets/vanessa.jpg' />
     </Head>
   )
 }
