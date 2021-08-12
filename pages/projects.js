@@ -14,6 +14,7 @@ export default function Work () {
   const [filters, setFilters] = useState({
     code: true,
     product: true,
+    manager: true,
     speaker: true,
     organizer: false
   })
